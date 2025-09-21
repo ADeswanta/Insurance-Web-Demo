@@ -6,67 +6,151 @@ let nomorPlatInput = document.getElementById("nomorPlat");
 let nomorMesinInput = document.getElementById("nomorMesin");
 let nomorRangkaInput = document.getElementById("nomorRangka");
 let namaPemilikInput = document.getElementById("namaPemilik");
-let fotoMobilInput = document.getElementById("fotoMobil");
 
-document.getElementById("submitButton").addEventListener("click", (e) => {
-    e.preventDefault();
+let fotoDepanInput = document.getElementById("fotoDepan");
+let fotoBelakangInput = document.getElementById("fotoBelakang");
+let fotoKiriInput = document.getElementById("fotoKiri");
+let fotoKananInput = document.getElementById("fotoKanan");
+let fotoDashboardInput = document.getElementById("fotoDashboard");
+let fotoMesinInput = document.getElementById("fotoMesin");
 
-    let merk = merkMobilInput.value;
-    let jenis = jenisMobilInput.value;
-    let tahun = tahunBuatInput.value;
-    let harga = hargaMobilInput.value;
-    let nomorPlat = nomorPlatInput.value;
-    let nomorMesin = nomorMesinInput.value;
-    let nomorRangka = nomorRangkaInput.value;
-    let namaPemilik = namaPemilikInput.value;
-    let fotoMobil = fotoMobilInput.files;
+function validasiForm() {
+  tampilkanFieldError("", "merkMobil");
+  tampilkanFieldError("", "jenisMobil");
+  tampilkanFieldError("", "tahunBuat");
+  tampilkanFieldError("", "hargaMobil");
+  tampilkanFieldError("", "nomorPlat");
+  tampilkanFieldError("", "nomorMesin");
+  tampilkanFieldError("", "nomorRangka");
+  tampilkanFieldError("", "namaPemilik");
+  tampilkanFieldError("", "fotoDepan");
+  tampilkanFieldError("", "fotoBelakang");
+  tampilkanFieldError("", "fotoKiri");
+  tampilkanFieldError("", "fotoKanan");
+  tampilkanFieldError("", "fotoDashboard");
+  tampilkanFieldError("", "fotoMesin");
 
-    if (
-        merk == "" &&
-        jenis == "" &&
-        tahun == "" &&
-        harga == "" &&
-        nomorPlat == "" &&
-        nomorMesin == "" &&
-        nomorRangka == "" &&
-        namaPemilik == "" &&
-        fotoMobil.length == 0
-    ) {
-        tampilkanError("Semua form harus diisi");
-        return;
-    } else {
-        tampilkanError("");
-    }
-})
+  let valid = true;
 
-function hitungPremi() {
+  if (merkMobilInput.value == "") {
+    tampilkanFieldError("Merk mobil harus diisi", "merkMobil");
+    valid = false;
+  }
+  if (jenisMobilInput.value == "") {
+    tampilkanFieldError("Jenis mobil harus diisi", "jenisMobil");
+    valid = false;
+  }
+  if (tahunBuatInput.value == "") {
+    tampilkanFieldError("Tahun pembuatan mobil harus diisi", "tahunBuat");
+    valid = false;
+  }
+  if (hargaMobilInput.value == "") {
+    tampilkanFieldError("Harga mobil harus diisi", "hargaMobil");
+    valid = false;
+  }
+  if (nomorPlatInput.value == "") {
+    tampilkanFieldError("Nomor plat mobil harus diisi", "nomorPlat");
+    valid = false;
+  }
+  if (nomorMesinInput.value == "") {
+    tampilkanFieldError("Nomor mesin mobil harus diisi", "nomorMesin");
+    valid = false;
+  }
+  if (nomorRangkaInput.value == "") {
+    tampilkanFieldError("Nomor rangka mobil harus diisi", "nomorRangka");
+    valid = false;
+  }
+  if (namaPemilikInput.value == "") {
+    tampilkanFieldError("Nama pemilik mobil harus diisi", "namaPemilik");
+    valid = false;
+  }
+  if (fotoDepanInput.files.length == 0) {
+    tampilkanFieldError("Foto mobil harus diisi", "fotoDepan");
+    valid = false;
+  }
+  if (fotoBelakangInput.files.length == 0) {
+    tampilkanFieldError("Foto mobil harus diisi", "fotoBelakang");
+    valid = false;
+  }
+  if (fotoKiriInput.files.length == 0) {
+    tampilkanFieldError("Foto mobil harus diisi", "fotoKiri");
+    valid = false;
+  }
+  if (fotoKananInput.files.length == 0) {
+    tampilkanFieldError("Foto mobil harus diisi", "fotoKanan");
+    valid = false;
+  }
+  if (fotoDashboardInput.files.length == 0) {
+    tampilkanFieldError("Foto mobil harus diisi", "fotoDashboard");
+    valid = false;
+  }
+  if (fotoMesinInput.files.length == 0) {
+    tampilkanFieldError("Foto mobil harus diisi", "fotoMesin");
+    valid = false;
+  }
+
+  return valid
+}
+
+function getAge() {
   let hargaMobil = hargaMobilInput.value;
   let tahunBuat = tahunBuatInput.value;
 
-  let umur = new Date().getFullYear() - tahunBuat;
-  console.log(umur);
+  return new Date().getFullYear() - tahunBuat;
+}
+
+function hitungPremi() {
+  if (!validasiForm()) { return; }
+
+  let hargaMobil = hargaMobilInput.value;
+  let umur = getAge();
 
   let premiMul = 0;
   if (umur < 3) {
-    // console.log("3 ke bawah");
+    // 3 ke bawah
     premiMul = 0.025;
   } else if (umur < 5) {
-    // console.log("3 - 5");
+    // 3 - 5
     if (hargaMobil < 200000000) {
-      // console.log("< 200 juta");
+      // < 200 juta
       premiMul = 0.04;
     } else {
-      // console.log("> 200 juta");
+      // > 200 juta
       premiMul = 0.03;
     }
   } else {
-    // console.log("5 ke atas");
+    // 5 ke atas
     premiMul = 0.05;
   }
-  console.log(premiMul);
+  // console.log(premiMul);
 
   let premi = hargaMobil * premiMul;
 
-  let premiText = document.getElementById("premi-info");
-  premiText.innerHTML = `Premi: ${currencyFormat(premi)}`;
+  let premiText = document.getElementById("premiInfo");
+  premiText.innerHTML = `
+    <span class="currency">Rp</span>
+    ${currencyFormat(premi).replaceAll("Rp", "").trimStart()}
+    <span class="small">/tahun</span>
+  `;
+
+  document.getElementById("submitButton").disabled = false;
+
+  return premi;
 }
+
+document.getElementById("submitButton").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (validasiForm()) {
+    let premi = hitungPremi();
+    window.localStorage.setItem("currentCheckout", JSON.stringify({
+      "nama": `Asuransi Mobil`,
+      "harga": premi,
+      "periode": "tahun",
+      "jenis": "Mobil"
+    }))
+
+    // Navigasi ke halaman checkout
+    window.location.href = "./purchase-checkout.html";
+  }
+})

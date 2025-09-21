@@ -1,0 +1,150 @@
+@import url("/assets/styles/theme.css");
+@import url("/assets/styles/fonts.css");
+
+@import url("/assets/styles/form.css");
+
+body {
+    padding-block: 80px;
+}
+
+body > section {
+    margin: auto;
+}
+
+.purchase {
+    width: 80%;
+}
+
+.card {
+    background: var(--full-background);
+    padding: 20px;
+    border: 1px solid var(--shade-border);
+    border-radius: 8px;
+}
+
+.formSection > form {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.formSection > form > #form {
+    /* width: 100%; */
+    flex: 3;
+}
+
+.formSection > form > #calc {
+    max-width: 360px;
+    flex: 2;
+}
+
+.formSection > form > #calc .premiInfo {
+    margin-bottom: 1rem;
+}
+
+.premiInfo {
+    font-size: 2em;
+    font-weight: bold;
+    /* margin-bottom: 1rem; */
+}
+.premiInfo .currency {
+    font-size: 0.9rem;
+}
+.premiInfo .small {
+    font-size: 0.9rem;
+    font-weight: normal;
+    opacity: .5;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    margin-block-end: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+.grid.col-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+.grid.col-6 .fill-full { grid-column: span 6; }
+
+.grid.col-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid.col-4 .fill-full { grid-column: span 4; }
+
+.grid.col-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid.col-2 .fill-full { grid-column: span 2; }
+
+.grid > *:not(.invalid) { margin: 0 !important; }
+
+.grid .fill-2 { grid-column: span 2; }
+.grid .fill-3 { grid-column: span 3; }
+
+
+
+
+
+.checkout {
+    width: 520px;
+}
+
+.productDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.productDetail > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productDetail > div .value {
+    font-size: 1.25em !important;
+    font-weight: bold;
+}
+
+#paymentMethods {
+    color: var(--foreground);
+}
+
+#paymentMethods .selectGroup {
+    width: 100%;
+    height: 52px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid var(--shade-border);
+    border-radius: 6px;
+
+    background: var(--shade);
+
+    outline: 0px solid transparent;
+
+    transition: 0.2s ease-out;;
+}
+
+#paymentMethods .selectGroup label {
+    margin-inline: 12px;
+}
+
+#paymentMethods .selectGroup:has(input[type="radio"]:checked) {
+    background: var(--accent-shade);
+    border-color: var(--accent);
+    outline: 2px solid var(--accent);
+}
+
+#paymentMethods .selectGroup input[type="radio"] {
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+}

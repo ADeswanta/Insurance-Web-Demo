@@ -1,7 +1,7 @@
-@import url("./theme.css");
-@import url("./fonts.css");
+@import url("/assets/styles/theme.css");
+@import url("/assets/styles/fonts.css");
 
-@import url("./form.css");
+@import url("/assets/styles/form.css");
 
 body {
     height: 100vh;

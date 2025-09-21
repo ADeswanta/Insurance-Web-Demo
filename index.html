@@ -3,48 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <title>Welcome - JoInsurance</title>
+    <link rel="stylesheet" href="/assets/styles/masters/home.css">
 </head>
 <body>
     <header>
-        <h1>JoInsurance</h1>
+        <a href="/" class="plain">
+            <h1>JoInsurance</h1>
+        </a>
         <div id="logged_out">
-            <a href="./login.html"><button>Masuk</button></a>
-            <a href="./signup.html"><button class="suggested">Daftar</button></a>
+            <a href="/auth/login.html"><button>Masuk</button></a>
+            <a href="/auth/signup.html"><button class="suggested">Daftar</button></a>
         </div>
         <div id="logged_in" class="hidden">
-            <a href="./history"><button>Histori Pembayaran</button></a>
+            <nav>
+                <a href="/manage/history.html"><button class="flat">Histori Pembayaran</button></a>
+                <a id="loggedUser" href="/manage/profile.html"><button class="flat">Halo, User</button></a>
+            </nav>
             <button id="logoutButton">Keluar</button>
         </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Produk Asuransi kami</h2>
-            <div id="products">
-                <div class="card product">
-                    <h4>Asuransi Mobil</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="./produk/asuransi_mobil.html"><button>Beli</button></a>
-                </div>
-                <div class="card product">
-                    <h4>Asuransi Kesehatan</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="./produk/asuransi_kesehatan.html"><button>Beli</button></a>
-                </div>
-                <div class="card product">
-                    <h4>Asuransi Jiwa</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="./produk/asuransi_jiwa.html"><button>Beli</button></a>
-                </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Marketplace Asuransi Online Terpercaya</h1>
+            <p>JoInsurance adalah marketplace asuransi online yang memungkinkan Anda untuk membandingkan berbagai produk asuransi dari berbagai perusahaan asuransi terpercaya di Indonesia. Kami berkomitmen untuk memberikan pengalaman yang lebih baik dan lebih mudah dalam memilih produk asuransi yang sesuai dengan kebutuhan Anda.</p>
+            <a href="#products" class="plain">
+                <button class="large">Lihat Produk Kami</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <h2>Kelebihan Menggunakan JoInsurance</h2>
+        <div class="cardGrid">
+            <div class="card">
+                <span class="sym large">done</span>
+                <h4>Memberikan Berbagai Produk Asuransi</h4>
+                <p>Kami menyediakan berbagai produk asuransi dari berbagai perusahaan asuransi terpercaya di Indonesia.</p>
             </div>
-        </section>
-    </main>
+            <div class="card">
+                <span class="sym large">compare_arrows</span>
+                <h4>Produk Asuransi yang Sesuai</h4>
+                <p>Produk kami dirancang untuk membantu Anda memberikan pelindungan yang sesuai dengan kebutuhan Anda.</p>
+            </div>
+            <div class="card">
+                <span class="sym large">acute</span>
+                <h4>Cepat dan Efisien</h4>
+                <p>Produk kami memiliki proses pembayaran yang cepat dan efisien, dari pembelian produk hingga proses klaim.</p>
+            </div>
+            <div class="card">
+                <span class="sym large">money_off</span>
+                <h4>Potongan Harga yang Lebih Kompetitif</h4>
+                <p>Kami memberikan potongan harga yang kompetitif dibandingkan dengan membeli langsung dari perusahaan asuransi lainnya.</p>
+            </div>
+            <div class="card">
+                <span class="sym large">verified_user</span>
+                <h4>Memastikan Keamanan dan Kenyamanan Anda</h4>
+                <p>JoInsurance Terdaftar dan diawasi oleh OJK, untuk dapat memastikan data dan transaksi Anda dapat terjaga dengan keamanan yang lebih baik.</p>
+            </div>
+            <div class="card">
+                <span class="sym large">support_agent</span>
+                <h4>Dukungan Pelanggan 24/7</h4>
+                <p>Kami selalu memberikan dukungan pelanggan yang lebih baik dan lebih responsif.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Produk Asuransi kami</h2>
+        <p class="dim">Klik produk untuk melihat lebih detail</p>
+        <div class="cardGrid">
+            <a class="plain product" href="/product/product-car-insurance.html">
+                <div class="card">
+                    <span class="sym large">directions_car</span>
+                    <h4>Asuransi Mobil</h4>
+                    <p>Lindungi kendaraanmu dari risiko tak terduga.</p>
+                </div>
+            </a>
+            <a class="plain product" href="/product/product-health-insurance.html">
+                <div class="card">
+                    <span class="sym large">health_cross</span>
+                    <h4>Asuransi Kesehatan</h4>
+                    <p>Jaga kesehatanmu dengan perlindungan terbaik.</p>
+                </div>
+            </a>
+            <a class="plain product" href="/product/product-life-insurance.html">
+                <div class="card">
+                    <span class="sym large">shield_with_heart</span>
+                    <h4>Asuransi Jiwa</h4>
+                    <p>Memberikan ketenangan finansial bagi keluarga.</p>
+                </div>
+            </a>
+        </div>
+    </section>
 
 
-    <script src="./scripts/auth.js"></script>
-    <script src="./scripts/header.js"></script>
-    <script src="./scripts/home.js"></script>
+    <footer>
+        <div class="links">
+            <a href="#"><button class="flat">Tentang Kami</button></a>
+            <a href="#"><button class="flat">Hubungi Kami</button></a>
+            <a href="#"><button class="flat">FAQ</button></a>
+        </div>
+        <p id="copyLine">Copyright YYYY JoInsurance. All rights reserved.</p>
+    </footer>
+
+
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
+    <script src="/assets/scripts/home.js"></script>
 </body>
 </html>

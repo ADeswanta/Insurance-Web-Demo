@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Mobil - JoInsurance</title>
+    <link rel="stylesheet" href="/assets/styles/masters/home.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="plain">
+            <h1>JoInsurance</h1>
+        </a>
+        <div id="logged_out">
+            <a href="/auth/login.html"><button>Masuk</button></a>
+            <a href="/auth/signup.html"><button class="suggested">Daftar</button></a>
+        </div>
+        <div id="logged_in" class="hidden">
+            <nav>
+                <a href="/manage/history.html"><button class="flat">Histori Pembayaran</button></a>
+                <a id="loggedUser" href="/manage/profile.html"><button class="flat">Halo, User</button></a>
+            </nav>
+            <button id="logoutButton">Keluar</button>
+        </div>
+    </header>
+
+    <section>
+        <button class="flat" onclick="window.location.href = '/index.html'">
+            <span class="sym">arrow_back</span>
+            <span>Kembali ke Halaman Utama</span>
+        </button>
+    </section>
+    <section class="aboutProduct">
+        <span class="sym">directions_car</span>
+        <h2>Asuransi Mobil</h2>
+
+        <p>Asuransi mobil memberikan perlindungan yang luas terhadap kendaraan Anda, termasuk kerugian yang diakibatkan oleh pihak lain, kerugian yang diakibatkan oleh kecelakaan, dan kerugian yang diakibatkan oleh bencana alam. Dengan asuransi mobil, Anda dapat mengurangi kerugian finansial yang tidak terduga akibat kerusakan atau kecelakaan, serta memperoleh biaya perawatan yang lebih rendah karena tidak perlu lagi biaya untuk memperbaiki kerugian.</p>
+
+        <h4>Manfaat:</h4>
+        <ul class="lists">
+            <li>Perlindungan terhadap bencana alam (banjir, gempa bumi, angin topan)</li>
+            <li>Tanggung jawab hukum terhadap pihak ketiga</li>
+            <li>Perlindungan atas kerugian yang diakibatkan akibat kerusuhan, huru-hara, dan terorisme.</li>
+            <li>Layanan darurat 24 jam (misalnya, bantuan derek)</li>
+            <li>Biaya perawatan yang lebih rendah karena tidak perlu lagi biaya untuk memperbaiki kerugian</li>
+        </ul>
+
+        <h4>Siapa yang cocok:</h4>
+        <ul class="lists">
+            <li><b>All Risk:</b> Pemilik mobil baru, mobil mewah, atau yang sering menggunakan mobilnya.</li>
+            <li><b>TLO:</b> Pemilik mobil dengan usia lebih dari 5 tahun atau yang mencari premi terjangkau.</li>
+        </ul>
+
+        <button class="large suggested" onclick="
+            window.location.href = isLoggedIn() ? '/purchase/purchase-car-insurance.html' : '/auth/login.html'
+        ">Beli Produk</button>
+    </section>
+
+    <footer>
+        <div class="links">
+            <a href="#"><button class="flat">Tentang Kami</button></a>
+            <a href="#"><button class="flat">Hubungi Kami</button></a>
+            <a href="#"><button class="flat">FAQ</button></a>
+        </div>
+        <p id="copyLine">Copyright YYYY JoInsurance. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
+    <script src="/assets/scripts/home.js"></script>
+</body>
+</html>

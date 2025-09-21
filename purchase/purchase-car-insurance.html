@@ -3,83 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beli Asuransi Mobil</title>
-    <link rel="stylesheet" href="../styles/index.css">
+    <title>Pembelian Asuransi Mobil</title>
+    <link rel="stylesheet" href="/assets/styles/masters/purchase.css">
 </head>
 <body>
-    <!-- <header>
-        <h1>JoInsurance</h1>
-        <div id="logged_out">
-            <a href="./login.html"><button>Masuk</button></a>
-            <a href="./signup.html"><button class="suggested">Daftar</button></a>
-        </div>
-        <div id="logged_in" class="hidden">
-            <button id="logoutButton">Keluar</button>
-        </div>
-    </header> -->
-
-    <div id="premiCalc" class="">
-        <a id="homeLink" class="flat" href="../index.html">
-            <button class="flat">
+    <section class="purchase">
+        <header>
+            <button class="flat" onclick="window.location.href = '/index.html'">
                 <span class="sym">arrow_back</span>
                 <span>Kembali ke Halaman Utama</span>
             </button>
-        </a>
-        <h2>Formulir Asuransi Mobil</h2>
-        <form id="purchaseCarForm">
-            <div class="formContainer">
-                <div class="inputGroup">
-                    <input type="text" id="merkMobil" name="merkMobil" placeholder=" ">
-                    <label for="merkMobil">Merk Mobil</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="text" id="jenisMobil" name="jenisMobil" placeholder=" ">
-                    <label for="jenisMobil">Jenis Mobil</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="number" id="tahunBuat" name="tahunBuat" placeholder=" ">
-                    <label for="tahunBuat">Tahun Pembuatan</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="number" id="hargaMobil" name="hargaMobil" placeholder=" ">
-                    <label for="hargaMobil">Harga Mobil (Rp)</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="text" id="nomorPlat" name="nomorPlat" placeholder=" ">
-                    <label for="nomorPlat">Nomor Plat Mobil</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="text" id="nomorMesin" name="nomorMesin" placeholder=" ">
-                    <label for="nomorMesin">Nomor Mesin</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="text" id="nomorRangka" name="nomorRangka" placeholder=" ">
-                    <label for="nomorRangka">Nomor Rangka</label>
-                </div>
-                <div class="inputGroup">
-                    <input type="text" id="namaPemilik" name="namaPemilik" placeholder=" ">
-                    <label for="namaPemilik">Nama Pemilik</label>
-                </div>
-                <div class="inputGroup static">
-                    <input type="file" id="fotoMobil" name="fotoMobil" multiple>
-                    <label>Foto Mobil</label>
-                </div>
-                <button type="button" onclick="hitungPremi()">Hitung Premi</button>
-            </div>
-            <div class="premiumForm">
-                <div id="premi-info"></div>
-                <button id="submitButton" type="submit" class="suggested">Checkout</button>
-            </div>
-        </form>
-    </div>
+            <h2>Pembelian Asuransi Mobil</h2>
+        </header>
 
-    <div id="checkout" class="hidden">
-
+        <section class="formSection">
+            <form>
+                <div id="form" class="card">
+                    <h4>Pengisian Formulir</h4>
+                    <div class="grid col-6">
+                        <div class="inputGroup fill-3">
+                            <input type="text" id="merkMobil" name="merkMobil" placeholder="Contoh: Daihatsu">
+                            <label class="float" for="merkMobil">Merk Mobil</label>
+                            <span id="merkMobilErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-3">
+                            <input type="text" id="jenisMobil" name="jenisMobil" placeholder="Contoh: Xenia">
+                            <label class="float" for="jenisMobil">Jenis Mobil</label>
+                            <span id="jenisMobilErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-3">
+                            <input type="number" id="tahunBuat" name="tahunBuat" placeholder="Contoh: 2020">
+                            <label class="float" for="tahunBuat">Tahun Pembuatan</label>
+                            <span id="tahunBuatErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-3">
+                            <input type="number" id="hargaMobil" name="hargaMobil" placeholder="120000000">
+                            <label class="float" for="hargaMobil">Harga Mobil</label>
+                            <label for="hargaMobil" class="prefix">Rp</label>
+                            <span id="hargaMobilErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-2">
+                            <input type="text" id="nomorPlat" name="nomorPlat" placeholder="Contoh: A 1234 ABC">
+                            <label class="float" for="nomorPlat">Nomor Plat Mobil</label>
+                            <span id="nomorPlatErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-2">
+                            <input type="text" id="nomorMesin" name="nomorMesin" placeholder="Contoh: 123456789">
+                            <label class="float" for="nomorMesin">Nomor Mesin</label>
+                            <span id="nomorMesinErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-2">
+                            <input type="text" id="nomorRangka" name="nomorRangka" placeholder="Contoh: 123456789">
+                            <label class="float" for="nomorRangka">Nomor Rangka</label>
+                            <span id="nomorRangkaErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-full">
+                            <input type="text" id="namaPemilik" name="namaPemilik" placeholder="Sesuaikan yang ada di STNK Anda">
+                            <label class="float" for="namaPemilik">Nama Pemilik (Sesuai STNK)</label>
+                            <span id="namaPemilikErr" class="errorInfo">Error</span>
+                        </div>
+                    </div>
+                    <h4 style="margin-bottom: 0;">Foto Kendaraan</h4>
+                    <p class="dim"><i>Tidak akan berpengaruh dengan total premi Anda</i></p>
+                    <div class="grid col-6">
+                        <div class="inputGroup file fill-2">
+                            <input type="file" id="fotoDepan" name="fotoDepan" multiple>
+                            <label class="float">Tampak Depan</label>
+                            <label class="upload" for="fotoDepan">Upload file...</label>
+                            <span id="fotoDepanErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup file fill-2">
+                            <input type="file" id="fotoBelakang" name="fotoBelakang" multiple>
+                            <label class="float">Tampak Belakang</label>
+                            <label class="upload" for="fotoBelakang">Upload file...</label>
+                            <span id="fotoBelakangErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup file fill-2">
+                            <input type="file" id="fotoKiri" name="fotoKiri" multiple>
+                            <label class="float" for="fotoKiri">Tampak Kiri</label>
+                            <label class="upload" for="fotoKiri">Upload file...</label>
+                            <span id="fotoKiriErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup file fill-2">
+                            <input type="file" id="fotoKanan" name="fotoKanan" multiple>
+                            <label class="float" for="fotoKanan">Tampak Kanan</label>
+                            <label class="upload" for="fotoKanan">Upload file...</label>
+                            <span id="fotoKananErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup file fill-2">
+                            <input type="file" id="fotoDashboard" name="fotoDashboard" multiple>
+                            <label class="float" for="fotoDashboard">Dashboard Mobil</label>
+                            <label class="upload" for="fotoDashboard">Upload file...</label>
+                            <span id="fotoDashboardErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup file fill-2">
+                            <input type="file" id="fotoMesin" name="fotoMesin" multiple>
+                            <label class="float" for="fotoMesin">Mesin</label>
+                            <label class="upload" for="fotoMesin">Upload file...</label>
+                            <span id="fotoMesinErr" class="errorInfo">Error</span>
+                        </div>
+                    </div>
+                    <button class="large" type="button" onclick="hitungPremi()">Hitung Premi</button>
+                </div>
+                <div id="calc" class="card">
+                    <h4>Estimasi Premi Anda sebesar</h4>
+                    <div id="premiInfo" class="premiInfo"><span class="currency">Rp</span>???.???.???<span class="small">/tahun</span></div>
+                    <button id="submitButton" type="submit" class="large suggested" disabled>Checkout</button>
+                </div>
+            </form>
+        </section>
     </section>
 
-    <script src="../scripts/auth.js"></script>
-    <script src="../scripts/utils.js"></script>
-    <script src="../scripts/asuransi_mobil.js"></script>
-    <!-- <script src="../scripts/header.js"></script> -->
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/logged_only.js"></script>
+    <script src="/assets/scripts/utils.js"></script>
+    <script src="/assets/scripts/asuransi_mobil.js"></script>
+    <script src="/assets/scripts/form.js"></script>
 </body>
 </html>

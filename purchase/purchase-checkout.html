@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/assets/styles/masters/purchase.css">
+</head>
+<body>
+    <section class="checkout">
+        <header>
+            <button id="cancelButton" class="flat">
+                <span class="sym">arrow_back</span>
+                <span>Batal</span>
+            </button>
+            <h2>Konfirmasi Pembayaran</h2>
+        </header>
+
+        <div id="form" class="card">
+            <h4>Produk yang Anda beli</h4>
+            <div class="productDetail">
+                <div>
+                    <span class="dim">Nama Produk</span>
+                    <span class="value" id="productName">Asuransi Mobil</span>
+                </div>
+                <div>
+                    <span class="dim">Harga premi</span>
+                    <span class="value premiInfo" id="productPrice"><span class="currency">Rp</span>???.???.???<span class="small">/tahun</span></span>
+                </div>
+            </div>
+            <h4>Pilih Metode Pembayaran</h4>
+            <div class="grid col-6" id="paymentMethods">
+                <div class="fill-3 selectGroup">
+                    <input type="radio" name="paymentMethods" id="creditCardOption" value="creditCard">
+                    <label for="creditCard">Kartu Kredit</label>
+                </div>
+                <div class="fill-3 selectGroup">
+                    <input type="radio" name="paymentMethods" id="virtualAccountOption" value="virtualAccount">
+                    <label for="virtualAccount">Virtual Account</label>
+                </div>
+                <div class="fill-3 selectGroup">
+                    <input type="radio" name="paymentMethods" id="bankTransferOption" value="bankTransfer">
+                    <label for="bankTransfer">Transfer Bank</label>
+                </div>
+                <div class="fill-3 selectGroup">
+                    <input type="radio" name="paymentMethods" id="autoDebitOption" value="autoDebit">
+                    <label for="autoDebit">Auto-Debit</label>
+                </div>
+            </div>
+            <label id="errMessage" class="hidden">
+                <span class="sym">error</span>
+                <span class="msg">Error</span>
+            </label>
+            <form>
+                <div class="inputGroup toggle">
+                    <label class="prop" for="bayarSekarang">Bayar sekarang?</label>
+                    <div class="toggle">
+                        <div class="false" style="min-width: 120px">
+                            <input type="radio" name="bayarSekarang" value="0">
+                            Nanti saja
+                        </div>
+                        <div class="true" style="min-width: 120px">
+                            <input type="radio" name="bayarSekarang" value="1" checked>
+                            Sekarang
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button id="payButton" class="large fill suggested" type="submit">Selesai</button>
+        </div>
+    </section>
+
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/logged_only.js"></script>
+    <script src="/assets/scripts/utils.js"></script>
+    <script src="/assets/scripts/form.js"></script>
+    <script src="/assets/scripts/checkout.js"></script>
+</body>
+</html>

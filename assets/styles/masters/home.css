@@ -1,0 +1,185 @@
+@import url("/assets/styles/theme.css");
+@import url("/assets/styles/fonts.css");
+@import url("/assets/styles/form.css");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    position:relative;
+}
+
+.center {
+    height: 100vh;
+}
+
+
+/* Cards */
+
+.card {
+    width: 300px;
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: var(--shade);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+    border: solid 1px hsla(0 0% 0% / 0.1);
+    border-radius: 6px;
+
+    transition: 0.2s ease-out;
+}
+.card:hover {
+    background: var(--shade-hover);
+}
+.card:active {
+    background: var(--accent-shade);
+}
+.card * { margin: 0; }
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: stretch;
+    align-items: stretch;
+    gap: 16px;
+}
+.cardGrid .card {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 12px;
+}
+.cardGrid .card .sym {
+    color: var(--accent);
+}
+
+
+/* Header */
+
+header {
+    width: 100%;
+    min-height: 100px;
+
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    margin-block-end: 32px;
+
+    border-color: transparent;
+
+    transition-property: backdrop-filter, box-shadow, border;
+    transition: 0.25s ease-out;
+}
+
+header.sticky {
+    background-color: var(--shade);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    border-bottom: solid 1px hsla(0 0% 0% / 0.1);
+}
+
+header > div {
+    display: inline-flex;
+    gap: 16px;
+    align-items: center;
+}
+
+header nav {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+
+header nav button {
+    padding-inline: 12px !important;
+}
+header nav .active button {
+    color: var(--accent);
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* Sections */
+
+section {
+    padding-inline: 32px;
+    width: 75%;
+    margin: auto;
+    margin-block: 16px;
+}
+
+section.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 520px;
+    padding-inline: 160px;
+    box-sizing: border-box;
+}
+section.hero > .container {
+    font-size: 20px;
+}
+
+section.aboutProduct {
+    /* display: flex;
+    flex-direction: column;
+    gap: 10px; */
+    font-size: 18px;
+}
+section.aboutProduct .lists {
+    padding-inline-start: 2rem;
+    line-height: 1.5;
+    margin-block-end: 1.5em;
+}
+section.aboutProduct .lists li,
+section.aboutProduct .lists li b {
+    font-size: 18px;
+}
+section.aboutProduct .lists li::marker {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+section.aboutProduct .sym {
+    font-size: 96px;
+    color: var(--accent);
+}
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

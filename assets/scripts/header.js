@@ -14,8 +14,10 @@ if (isLogged) {
 
 let logoutButton = document.getElementById("logoutButton");
 logoutButton.addEventListener("click", () => {
-  resetAuth();
-  window.location.href = "./index.html";
+  if (confirm("Anda yakin ingin keluar?")) {
+    resetAuth();
+    window.location.href = "/index.html";
+  }
 });
 
 window.onscroll = (e) => {

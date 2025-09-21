@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembelian Asuransi Jiwa</title>
+  <link rel="stylesheet" href="/assets/styles/masters/purchase.css">
+</head>
+<body>
+  <section class="purchase">
+        <header>
+            <button class="flat" onclick="window.location.href = '/index.html'">
+                <span class="sym">arrow_back</span>
+                <span>Kembali ke Halaman Utama</span>
+            </button>
+            <h2>Pembelian Asuransi Jiwa</h2>
+        </header>
+
+        <section class="formSection">
+            <form>
+                <div id="form" class="card">
+                    <h4>Pengisian Formulir</h4>
+                    <div class="grid col-2">
+                        <div class="inputGroup fill-full">
+                            <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Nama harus sesuai yang ada di KTP Anda">
+                            <label class="float" for="namaLengkap">Nama Lengkap (Sesuai KTP)</label>
+                            <span id="namaLengkapErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-full">
+                            <input type="date" id="tanggalLahir" name="tanggalLahir">
+                            <label class="float" for="tanggalLahir">Tanggal Lahir</label>
+                            <span id="tanggalLahirErr" class="errorInfo">Error</span>
+                        </div>
+                        <div class="inputGroup fill-full select">
+                            <select id="besarTanggungan" name="besarTanggungan">
+                              <option value="1000000000">Rp 1.000.000.000,00</option>
+                              <option value="2000000000">Rp 2.000.000.000,00</option>
+                              <option value="3000000000">Rp 3.000.000.000,00</option>
+                              <option value="5000000000">Rp 5.000.000.000,00</option>
+                              <option value="10000000000">Rp 10.000.000.000,00</option>
+                            </select>
+                            <label class="prop" for="besarTanggungan">Besaran Pertanggungan</label>
+                            <span id="besarTanggunganErr" class="errorInfo">Error</span>
+                            <span class="sym expand">arrow_drop_down</span>
+                        </div>
+                    </div>
+                    <button class="large" type="button" onclick="hitungPremi()">Hitung Premi</button>
+                </div>
+                <div id="calc" class="card">
+                    <h4>Estimasi Premi Anda sebesar</h4>
+                    <div id="premiInfo" class="premiInfo"><span class="currency">Rp</span>???.???.???<span class="small">/bulan</span></div>
+                    <button id="submitButton" type="submit" class="large suggested" disabled>Checkout</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/logged_only.js"></script>
+    <script src="/assets/scripts/utils.js"></script>
+    <script src="/assets/scripts/asuransi_jiwa.js"></script>
+    <script src="/assets/scripts/form.js"></script>
+</body>
+</html>

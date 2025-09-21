@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Jiwa - JoInsurance</title>
+    <link rel="stylesheet" href="/assets/styles/masters/home.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="plain">
+            <h1>JoInsurance</h1>
+        </a>
+        <div id="logged_out">
+            <a href="/auth/login.html"><button>Masuk</button></a>
+            <a href="/auth/signup.html"><button class="suggested">Daftar</button></a>
+        </div>
+        <div id="logged_in" class="hidden">
+            <nav>
+                <a href="/manage/history.html"><button class="flat">Histori Pembayaran</button></a>
+                <a id="loggedUser" href="/manage/profile.html"><button class="flat">Halo, User</button></a>
+            </nav>
+            <button id="logoutButton">Keluar</button>
+        </div>
+    </header>
+
+    <section>
+        <button class="flat" onclick="window.location.href = '/index.html'">
+            <span class="sym">arrow_back</span>
+            <span>Kembali ke Halaman Utama</span>
+        </button>
+    </section>
+    <section class="aboutProduct">
+        <span class="sym">shield_with_heart</span>
+        <h2>Asuransi Jiwa</h2>
+
+        <p>Asuransi jiwa memberikan perlindungan yang luas terhadap kehilangan finansial bagi keberlangsungan hidup keluarga atau ahli waris jika terjadi risiko meninggal dunia pada pemegang polis. Asuransi ini memberikan uang pertanggungan yang dapat digunakan untuk biaya hidup, pendidikan anak, atau melunasi utang.</p>
+
+        <h4>Manfaat:</h4>
+        <ul class="lists">
+            <li>Memberikan uang tunai kepada ahli waris untuk menggantikan pendapatan yang hilang</li>
+            <li>Uang pertanggungan dapat dialokasikan untuk membiayai pendidikan anak hingga jenjang tertinggi</li>
+            <li>Memastikan utang (misalnya KPR atau pinjaman lainnya) tidak menjadi beban bagi keluarga yang ditinggalkan</li>
+            <li>Memberikan rasa aman dan tenang karena Anda telah menyiapkan jaring pengaman bagi orang-orang terkasih</li>
+        </ul>
+
+        <h4>Siapa yang cocok:</h4>
+        <ul class="lists">
+          <li>Kepala keluarga atau tulang punggung keluarga.</li>
+          <li>Individu yang memiliki tanggungan finansial (pasangan, anak, atau orang tua).</li>
+          <li>Seseorang yang memiliki utang atau pinjaman jangka panjang.</li>
+        </ul>
+
+        <button class="large suggested" onclick="
+            window.location.href = isLoggedIn() ? '/purchase/purchase-life-insurance.html' : '/auth/login.html'
+        ">Beli Produk</button>
+    </section>
+
+    <footer>
+        <div class="links">
+            <a href="#"><button class="flat">Tentang Kami</button></a>
+            <a href="#"><button class="flat">Hubungi Kami</button></a>
+            <a href="#"><button class="flat">FAQ</button></a>
+        </div>
+        <p id="copyLine">Copyright YYYY JoInsurance. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
+    <script src="/assets/scripts/home.js"></script>
+</body>
+</html>

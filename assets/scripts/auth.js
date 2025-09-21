@@ -5,26 +5,25 @@ function getAllUsers() {
 }
 
 function isLoggedIn() {
-  return localStorage.getItem("loggedIndex") !== null;
+  return sessionStorage.getItem("loggedIndex") !== null;
 }
 
 function getLoggedUser() {
-  let index = localStorage.getItem("loggedIndex");
+  let index = sessionStorage.getItem("loggedIndex");
   return getAllUsers()[index];
 }
 
 function resetAuth() {
-  localStorage.removeItem("loggedIndex");
+  sessionStorage.clear();
 }
 
 function login(email, password) {
   if (!isLoggedIn()) {
     const allUsers = getAllUsers();
 
-    // console.log("login:", email, password);
-    let index = allUsers.findIndex((user) => {console.log(user.email == email); return user.email == email});
+    let index = allUsers.findIndex((user) => user.email == email);
 
-    console.log("found index:", index);
+    // console.log("found index:", index);
 
     if (index == -1) {
       return "not_found";
@@ -35,7 +34,7 @@ function login(email, password) {
       return "password_invalid";
     }
 
-    localStorage.setItem("loggedIndex", index);
+    sessionStorage.setItem("loggedIndex", index);
     return "";
   }
 
@@ -49,4 +48,13 @@ function registerAccount(data) {
   localStorage.setItem("users", JSON.stringify(allUsers));
 }
 
-console.log(getAllUsers());
+document.addEventListener("DOMContentLoaded", () => {
+  let loggedUserButton = document.querySelector("#loggedUser button");
+
+  if (loggedUserButton) {
+    let loggedUser = getLoggedUser();
+    if (loggedUser) {
+        loggedUserButton.innerText = "Halo, " + loggedUser.name.split(" ")[0];
+    }
+  }
+})

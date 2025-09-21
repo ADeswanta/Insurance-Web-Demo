@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Kesehatan - JoInsurance</title>
+    <link rel="stylesheet" href="/assets/styles/masters/home.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="plain">
+            <h1>JoInsurance</h1>
+        </a>
+        <div id="logged_out">
+            <a href="/auth/login.html"><button>Masuk</button></a>
+            <a href="/auth/signup.html"><button class="suggested">Daftar</button></a>
+        </div>
+        <div id="logged_in" class="hidden">
+            <nav>
+                <a href="/manage/history.html"><button class="flat">Histori Pembayaran</button></a>
+                <a id="loggedUser" href="/manage/profile.html"><button class="flat">Halo, User</button></a>
+            </nav>
+            <button id="logoutButton">Keluar</button>
+        </div>
+    </header>
+
+    <section>
+        <button class="flat" onclick="window.location.href = '/index.html'">
+            <span class="sym">arrow_back</span>
+            <span>Kembali ke Halaman Utama</span>
+        </button>
+    </section>
+    <section class="aboutProduct">
+        <span class="sym">health_cross</span>
+        <h2>Asuransi Kesehatan</h2>
+
+        <p>Asuransi kesehatan memberikan perlindungan yang luas terhadap biaya perawatan dan pengobatan yang diakibatkan oleh sakit atau cedera. Dengan asuransi kesehatan, Anda dapat mengurangi biaya perawatan yang tidak terduga akibat sakit atau cedera, serta memperoleh biaya perawatan yang lebih rendah karena tidak perlu lagi biaya untuk memperbaiki sakit atau cedera.</p>
+
+        <h4>Manfaat:</h4>
+        <ul class="lists">
+            <li>Perlindungan atas biaya perawatan dan pengobatan yang diakibatkan oleh sakit atau cedera</li>
+            <li>Mengurangi biaya perawatan yang tidak terduga akibat sakit atau cedera</li>
+            <li>Memperoleh biaya perawatan yang lebih rendah karena tidak perlu lagi biaya untuk memperbaiki sakit atau cedera</li>
+        </ul>
+
+        <h4>Siapa yang cocok:</h4>
+        <ul class="lists">
+          <li>Setiap individu dan keluarga yang ingin memiliki jaring pengaman finansial dari biaya kesehatan yang tak terduga.</li>
+          <li>Asuransi ini sangat penting bagi kepala keluarga, pekerja mandiri, atau siapa pun yang ingin merencanakan keuangan jangka panjang.</li>
+        </ul>
+
+        <button class="large suggested" onclick="
+            window.location.href = isLoggedIn() ? '/purchase/purchase-health-insurance.html' : '/auth/login.html'
+        ">Beli Produk</button>
+    </section>
+
+    <footer>
+        <div class="links">
+            <a href="#"><button class="flat">Tentang Kami</button></a>
+            <a href="#"><button class="flat">Hubungi Kami</button></a>
+            <a href="#"><button class="flat">FAQ</button></a>
+        </div>
+        <p id="copyLine">Copyright YYYY JoInsurance. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/scripts/auth.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
+    <script src="/assets/scripts/home.js"></script>
+</body>
+</html>
