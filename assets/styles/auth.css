@@ -1,0 +1,43 @@
+@import url("./theme.css");
+@import url("./fonts.css");
+
+@import url("./form.css");
+
+body {
+    height: 100vh;
+}
+
+#homeLink {
+    position: absolute;
+    top: 0;
+
+    transform: translateY(calc(-100% - 20px));
+}
+
+.content {
+    width: 480px;
+    margin: auto;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content > * {
+    box-sizing: border-box;
+}
+
+.formContainer {
+    padding: 32px;
+    box-sizing: border-box;
+
+    margin-block: 20px;
+
+    background: var(--full-background);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+
+    border-radius: 12px;
+    border: solid 1px hsla(0 0% 0% / 0.1);
+
+    text-align: center;
+}

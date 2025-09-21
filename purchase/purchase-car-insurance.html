@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beli Asuransi Mobil</title>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+    <!-- <header>
+        <h1>JoInsurance</h1>
+        <div id="logged_out">
+            <a href="./login.html"><button>Masuk</button></a>
+            <a href="./signup.html"><button class="suggested">Daftar</button></a>
+        </div>
+        <div id="logged_in" class="hidden">
+            <button id="logoutButton">Keluar</button>
+        </div>
+    </header> -->
+
+    <div id="premiCalc" class="">
+        <a id="homeLink" class="flat" href="../index.html">
+            <button class="flat">
+                <span class="sym">arrow_back</span>
+                <span>Kembali ke Halaman Utama</span>
+            </button>
+        </a>
+        <h2>Formulir Asuransi Mobil</h2>
+        <form id="purchaseCarForm">
+            <div class="formContainer">
+                <div class="inputGroup">
+                    <input type="text" id="merkMobil" name="merkMobil" placeholder=" ">
+                    <label for="merkMobil">Merk Mobil</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="text" id="jenisMobil" name="jenisMobil" placeholder=" ">
+                    <label for="jenisMobil">Jenis Mobil</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="number" id="tahunBuat" name="tahunBuat" placeholder=" ">
+                    <label for="tahunBuat">Tahun Pembuatan</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="number" id="hargaMobil" name="hargaMobil" placeholder=" ">
+                    <label for="hargaMobil">Harga Mobil (Rp)</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="text" id="nomorPlat" name="nomorPlat" placeholder=" ">
+                    <label for="nomorPlat">Nomor Plat Mobil</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="text" id="nomorMesin" name="nomorMesin" placeholder=" ">
+                    <label for="nomorMesin">Nomor Mesin</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="text" id="nomorRangka" name="nomorRangka" placeholder=" ">
+                    <label for="nomorRangka">Nomor Rangka</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="text" id="namaPemilik" name="namaPemilik" placeholder=" ">
+                    <label for="namaPemilik">Nama Pemilik</label>
+                </div>
+                <div class="inputGroup static">
+                    <input type="file" id="fotoMobil" name="fotoMobil" multiple>
+                    <label>Foto Mobil</label>
+                </div>
+                <button type="button" onclick="hitungPremi()">Hitung Premi</button>
+            </div>
+            <div class="premiumForm">
+                <div id="premi-info"></div>
+                <button id="submitButton" type="submit" class="suggested">Checkout</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="checkout" class="hidden">
+
+    </section>
+
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/asuransi_mobil.js"></script>
+    <!-- <script src="../scripts/header.js"></script> -->
+</body>
+</html>

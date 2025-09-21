@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+    <div class="content">
+        <a id="homeLink" class="flat" href="../index.html">
+            <button class="flat">
+                <span class="sym">arrow_back</span>
+                <span>Kembali ke Halaman Utama</span>
+            </button>
+        </a>
+        <div class="formContainer">
+            <h1>Daftar</h1>
+            <form action="#signup">
+                <div class="inputGroup">
+                    <input type="text" id="nameInput" placeholder=" ">
+                    <label for="merkMobil">Nama Lengkap</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="email" id="emailInput" placeholder=" ">
+                    <label for="emailInput">Email</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="tel" id="phoneInput" placeholder=" ">
+                    <label for="phoneInput">Nomor Telepon</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="password" id="passwordInput" placeholder=" ">
+                    <label for="passwordInput">Password</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="password" id="confirmPasswordInput" placeholder=" ">
+                    <label for="confirmPasswordInput">Konfirmasi Password</label>
+                </div>
+                <button type="submit" class="suggested" id="submitButton">Daftar</button>
+                <label id="errMessage" class="hidden">
+                    <span class="sym">error</span>
+                    <span class="msg">Error</span>
+                </label>
+            </form>
+            <p>Sudah punya akun, masuk <a href="./login.html">di sini</a></p>
+        </div>
+    </div>
+
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/signup.js"></script>
+    <script src="./scripts/auth.js"></script>
+</body>
+</html>

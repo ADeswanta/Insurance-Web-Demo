@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk</title>
+    <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+    <div class="content">
+        <a id="homeLink" class="flat" href="../index.html">
+            <button class="flat">
+                <span class="sym">arrow_back</span>
+                <span>Kembali ke Halaman Utama</span>
+            </button>
+        </a>
+        <div class="formContainer">
+            <h1>Masuk</h1>
+            <form action="#login">
+                <div class="inputGroup">
+                    <input type="email" id="emailInput" placeholder=" ">
+                    <label for="merkMobil">Email</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="password" id="passwordInput" placeholder=" ">
+                    <label for="merkMobil">Password</label>
+                </div>
+                <button type="submit" class="suggested" id="submitButton">Masuk</button>
+                <label id="errMessage" class="hidden">
+                    <span class="sym">error</span>
+                    <span class="msg">Error</span>
+                </label>
+            </form>
+            <p>Belum punya akun?, daftar <a href="./signup.html">di sini</a></p>
+        </div>
+    </div>
+
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/auth.js"></script>
+</body>
+</html>

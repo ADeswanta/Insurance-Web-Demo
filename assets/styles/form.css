@@ -1,0 +1,127 @@
+/* Inputs */
+
+input {
+    display: block;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    margin-block-end: 12px;
+
+    background: var(--full-background);
+    color: var(--foreground);
+
+    border-radius: 6px;
+    border: solid 1px var(--shade-border);
+
+    outline: 0px solid transparent;
+
+    transition-property: border-color, outline-color;
+    transition: 0.2s ease-in-out;
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent-shade);
+}
+
+form > *:last-child {
+    margin-block-end: 0;
+}
+
+form button, form input[type="button"] {
+    display: block;
+    width: 100%;
+    margin-block-end: 12px;
+}
+
+form .fill {
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-block: 8px;
+    color: var(--foreground);
+    text-align: start;
+    box-sizing: border-box;
+}
+
+
+
+form .inputGroup {
+    width: 100%;
+    margin-block-end: 12px;
+
+    position: relative;
+
+    /* padding-block-start: calc(8px + 1rem + 6px); */
+
+    background: var(--full-background);
+    color: var(--foreground);
+
+    border-radius: 6px;
+    border: solid 1px var(--shade-border);
+
+    outline: 0px solid transparent;
+
+    transition-property: border-color, outline-color;
+    transition: 0.2s ease-in-out;
+}
+
+form .inputGroup:focus-within {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent-shade);
+}
+
+form .inputGroup input {
+    margin: 0;
+    padding-block-start: 6px;
+    padding-block-end: 8px;
+    border: none;
+    padding-block-start: calc(8px + 0.9rem + 6px);
+}
+
+form .inputGroup input:focus {
+    outline: none;
+}
+
+form .inputGroup label {
+    position: absolute;
+    top: 50%;
+    /* position: relative;
+    top: 0; */
+    font-size: 1rem;
+    opacity: .75;
+    /* margin: 8px 12px 0; */
+    margin: 0 12px;
+
+    /* transform-origin: top left;
+
+    transform: translateY(8px); */
+    transform: translateY(-50%);
+
+    transition: 0.2s ease-out;
+}
+
+form .inputGroup:focus-within label,
+form .inputGroup input:not(:placeholder-shown) + label,
+form .inputGroup.static label {
+    font-size: 0.9rem;
+    top: 8px;
+    transform: none;
+}
+
+
+/* Error Messages */
+
+form label#errMessage {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    padding: 6px 8px;
+    border-radius: 4px;
+}

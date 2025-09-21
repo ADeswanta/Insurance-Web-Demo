@@ -1,0 +1,107 @@
+:root {
+    --background: #fafafa;
+    --foreground: #111;
+    --full-background: white;
+
+    --accent: rgb(37, 128, 233);
+    --accent-shade: rgba(37, 128, 233, 0.25);
+
+    --shade: hsla(0 0% 0% / 0.05);
+    --shade-border: hsla(0 0% 0% / 0.1);
+    --shade-border-invert: hsla(0 0% 100% / 0.2);
+
+    --fixed-white-10: hsla(0 0% 100% / 0.1);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background: #101010;
+        --foreground: #fff;
+        --full-background: black;
+
+        --accent: rgb(37, 128, 233);
+        --accent-shade: rgba(37, 128, 233, 0.25);
+
+        --shade: hsla(0 0% 100% / 0.05);
+        --shade-border: hsla(0 0% 100% / 0.1);
+        --shade-border-invert: hsla(0 0% 0% / 0.2);
+    }
+}
+
+
+/* Global */
+
+* {
+    font-family: Inter, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Links */
+a {
+    color: var(--accent);
+    /* text-decoration: none; */
+    text-decoration-thickness: 0px;
+    text-decoration-color: transparent;
+    transition-property: text-decoration-thickness, text-decoration-color;
+    transition: 0.2s ease-in-out;
+}
+
+a:not(.flat):hover {
+    /* text-decoration: underline; */
+    text-decoration-thickness: 2px;
+    text-decoration-color: revert;
+}
+
+
+/* Buttons */
+
+button {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    border: solid 1px var(--shade-border);
+    border-radius: 4px;
+    background: var(--shade);
+    color: var(--foreground);
+    transition: 0.2s ease-out;
+}
+
+button.flat {
+    background: none;
+    border: none;
+    padding-inline: 4px;
+}
+
+button:hover {
+    box-shadow: inset 0 0 0 9999px var(--shade);
+}
+
+button:active {
+    background: var(--accent-shade);
+    box-shadow: none;
+    border-color: var(--accent);
+    transition-duration: 0.05s;
+    color: var(--accent);
+}
+
+button.suggested {
+    background: var(--accent);
+    color: var(--background);
+    border-color: var(--shade-border-invert);
+}
+
+button.suggested:active {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 9999px var(--fixed-white-10);
+}
