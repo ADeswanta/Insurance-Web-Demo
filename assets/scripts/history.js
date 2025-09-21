@@ -4,8 +4,6 @@ let historyData = JSON.parse(localStorage.getItem("history")).filter(
 
 let historyTable = document.getElementById("historyTable");
 
-console.log(historyData.length);
-
 if (historyData && historyData.length > 0) {
   historyData.forEach(data => {
     let row = document.createElement("tr");

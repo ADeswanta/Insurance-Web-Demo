@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.localStorage.setItem("history", "[]");
   }
 
-  console.log(checkSelectedMethods());
-
   let productName = document.getElementById("productName");
   let productPrice = document.getElementById("productPrice");
 
@@ -47,8 +45,6 @@ document.getElementById("payButton").addEventListener("click", () => {
     "lunas": bayarSekarang ? true : false,
     "metodePembayaran": checkSelectedMethods()
   }
-
-  console.log(historyData);
 
   let history = JSON.parse(window.localStorage.getItem("history"));
   history.push(historyData);

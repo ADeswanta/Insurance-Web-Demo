@@ -136,9 +136,6 @@ section.hero > .container {
 }
 
 section.aboutProduct {
-    /* display: flex;
-    flex-direction: column;
-    gap: 10px; */
     font-size: 18px;
 }
 section.aboutProduct .lists {

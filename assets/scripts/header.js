@@ -20,8 +20,7 @@ logoutButton.addEventListener("click", () => {
   }
 });
 
-window.onscroll = (e) => {
-  console.log("onscroll");
+window.onscroll = () => {
   if (window.scrollY > 0) {
     header.classList.add("sticky");
   } else {

@@ -51,10 +51,10 @@ body {
     opacity: .5;
 }
 
+
 /* Links */
 a {
     color: var(--accent);
-    /* text-decoration: none; */
     text-decoration-thickness: 0px;
     text-decoration-color: transparent;
     transition-property: text-decoration-thickness, text-decoration-color;
@@ -62,7 +62,6 @@ a {
 }
 
 a:not(.flat):hover {
-    /* text-decoration: underline; */
     text-decoration-thickness: 2px;
     text-decoration-color: revert;
 }
@@ -79,17 +78,22 @@ button {
     display: inline-flex;
     gap: 4px;
     align-items: center;
-    cursor: pointer;
-    padding: 8px 12px;
-    border: solid 1px var(--shade-border);
-    border-radius: 4px;
-    background: var(--shade);
-    color: var(--foreground);
-    transition: 0.2s ease-out;
-    text-align: center;
     justify-content: center;
 
+    padding: 8px 12px;
+
+    background: var(--shade);
+    color: var(--foreground);
+
+    cursor: pointer;
+
+    border: solid 1px var(--shade-border);
+    border-radius: 4px;
+
     font-weight: bold;
+    text-align: center;
+
+    transition: 0.2s ease-out;
 }
 
 button.large {
@@ -114,8 +118,9 @@ button:active {
     background: var(--accent-shade);
     box-shadow: none;
     border-color: var(--accent);
-    transition-duration: 0.05s;
     color: var(--accent);
+
+    transition-duration: 0.05s;
 }
 
 button.suggested {
@@ -135,6 +140,7 @@ button:disabled {
     filter: grayscale(1);
     pointer-events: none;
 }
+
 
 /* Tables */
 

@@ -1,6 +1,5 @@
 @import url("/assets/styles/theme.css");
 @import url("/assets/styles/fonts.css");
-
 @import url("/assets/styles/form.css");
 
 body {
@@ -14,6 +13,7 @@ body {
     transform: translateY(calc(-100% - 20px));
 }
 
+
 .content {
     width: 480px;
     margin: auto;
@@ -26,6 +26,7 @@ body {
 .content > * {
     box-sizing: border-box;
 }
+
 
 .formContainer {
     padding: 32px;

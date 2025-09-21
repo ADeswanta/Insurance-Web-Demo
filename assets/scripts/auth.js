@@ -23,8 +23,6 @@ function login(email, password) {
 
     let index = allUsers.findIndex((user) => user.email == email);
 
-    // console.log("found index:", index);
-
     if (index == -1) {
       return "not_found";
     }
@@ -54,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loggedUserButton) {
     let loggedUser = getLoggedUser();
     if (loggedUser) {
-        loggedUserButton.innerText = "Halo, " + loggedUser.name.split(" ")[0];
+      loggedUserButton.innerText = "Halo, " + loggedUser.name.split(" ")[0];
     }
   }
 })

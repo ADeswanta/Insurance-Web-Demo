@@ -122,7 +122,6 @@ function hitungPremi() {
     // 5 ke atas
     premiMul = 0.05;
   }
-  // console.log(premiMul);
 
   let premi = hargaMobil * premiMul;
 

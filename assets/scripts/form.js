@@ -24,10 +24,6 @@ function tampilkanFieldError(msg, id) {
     }
 }
 
-function validateForm(data) {
-
-}
-
 function checkFileInput(input) {
   const fileNameSpan = input.parentElement.querySelector('.inputGroup.file .upload');
   if (input.files.length > 0) {

@@ -4,25 +4,12 @@ let phoneInput = document.getElementById("phoneInput");
 let passwordInput = document.getElementById("passwordInput");
 let confirmPasswordInput = document.getElementById("confirmPasswordInput");
 
-
 function validasiForm() {
     let name = nameInput.value;
     let email = emailInput.value;
     let phone = phoneInput.value;
     let password = passwordInput.value;
     let confirmPassword = confirmPasswordInput.value;
-
-    // nameInput.parentNode.classList.remove("invalid");
-    // emailInput.parentNode.classList.remove("invalid");
-    // phoneInput.parentNode.classList.remove("invalid");
-    // passwordInput.parentNode.classList.remove("invalid");
-    // confirmPasswordInput.parentNode.classList.remove("invalid");
-
-    // document.getElementById("nameInputErr").innerText = "";
-    // document.getElementById("emailInputErr").innerText = "";
-    // document.getElementById("phoneInputErr").innerText = "";
-    // document.getElementById("passwordInputErr").innerText = "";
-    // document.getElementById("confirmPasswordInputErr").innerText = "";
 
     tampilkanFieldError("", "nameInput");
     tampilkanFieldError("", "emailInput");
@@ -86,19 +73,6 @@ function validasiForm() {
         tampilkanFieldError("Password dan konfirmasi password harus sama", "confirmPasswordInput");
         valid = false;
     }
-
-    // if (
-    //     name == "" &&
-    //     email == "" &&
-    //     phone == "" &&
-    //     password == "" &&
-    //     confirmPassword == ""
-    // ) {
-    //     tampilkanError("Semua form harus diisi");
-    //     return;
-    // } else {
-    //     tampilkanError("");
-    // }
 
     return valid;
 }

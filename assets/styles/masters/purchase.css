@@ -1,6 +1,5 @@
 @import url("/assets/styles/theme.css");
 @import url("/assets/styles/fonts.css");
-
 @import url("/assets/styles/form.css");
 
 body {
@@ -11,9 +10,11 @@ body > section {
     margin: auto;
 }
 
+
 .purchase {
     width: 80%;
 }
+
 
 .card {
     background: var(--full-background);
@@ -22,6 +23,7 @@ body > section {
     border-radius: 8px;
 }
 
+
 .formSection > form {
     display: flex;
     align-items: flex-start;
@@ -29,7 +31,6 @@ body > section {
 }
 
 .formSection > form > #form {
-    /* width: 100%; */
     flex: 3;
 }
 
@@ -42,10 +43,10 @@ body > section {
     margin-bottom: 1rem;
 }
 
+
 .premiInfo {
     font-size: 2em;
     font-weight: bold;
-    /* margin-bottom: 1rem; */
 }
 .premiInfo .currency {
     font-size: 0.9rem;
@@ -55,6 +56,7 @@ body > section {
     font-weight: normal;
     opacity: .5;
 }
+
 
 .grid {
     display: grid;
@@ -85,12 +87,10 @@ body > section {
 .grid .fill-3 { grid-column: span 3; }
 
 
-
-
-
 .checkout {
     width: 520px;
 }
+
 
 .productDetail {
     display: flex;
@@ -109,6 +109,7 @@ body > section {
     font-size: 1.25em !important;
     font-weight: bold;
 }
+
 
 #paymentMethods {
     color: var(--foreground);

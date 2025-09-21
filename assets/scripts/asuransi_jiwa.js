@@ -29,7 +29,6 @@ function hitungPremi() {
 
   // Premi Dasar
   const tanggungan = parseInt(besarTanggungan.value);
-  console.log(tanggungan)
 
   let umur = getAge();
   let m = 0;
